@@ -130,8 +130,7 @@ public class SandboxListas
             }
         }
         for (int i = 0; i < save.size(); i++) {
-        	int index = save.get(i);
-        	listaEnteros.remove(index);
+        	listaEnteros.remove(valor);
         }
     }
 
@@ -235,7 +234,10 @@ public class SandboxListas
      */
     public void organizarEnteros( )
     {
-    	listaEnteros.sort(null);
+//    	public int compare(int a, int b) {
+//    		return a - b;
+//    	}
+    	listaEnteros.sort((a,b) -> b-a);
     }
 
     /**
@@ -243,7 +245,11 @@ public class SandboxListas
      */
     public void organizarCadenas( )
     {
+ 
+
+
     	listaCadenas.sort(null);
+    	
     }
 
     /**
@@ -344,8 +350,9 @@ public class SandboxListas
     {
     	listaEnteros = new ArrayList<>();
     	for (int i = 0; i < cantidad; i++) {
-    		listaEnteros.add((int)( Math.random() * (maximo - minimo) + minimo));
+    		listaEnteros.add((int) ((Math.random() * (maximo - minimo)) + minimo));
     	}
+
     }
 
 }

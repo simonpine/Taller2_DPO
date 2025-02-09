@@ -479,8 +479,11 @@ public class SandboxArreglos
     public void generarEnteros( int cantidad, int minimo, int maximo )
     {
     	int[] res = new int[cantidad];
-    	for (int i = 0; i < res.length; i++) {
-    		res[i] = (int)( Math.random() * (maximo - minimo) + minimo);
+    	for (int i = 2; i < res.length; i++) {
+    		double a = Math.random();
+
+        	res[i] = (int)( a * (maximo - minimo ) + minimo);
+    		
     	}
     	arregloEnteros = res;
 
