@@ -1,5 +1,6 @@
 package uniandes.dpoo.estructuras.logica;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -223,7 +224,10 @@ public class SandboxArreglos
      */
     public void reiniciarArregloEnteros( double[] valores )
     {
-
+    	arregloEnteros = new int[valores.length];
+    	for (int i = 0; i < valores.length ; i++) {
+    		arregloEnteros[i] = (int)(valores[i]);
+    	}
     }
 
     /**
@@ -234,7 +238,12 @@ public class SandboxArreglos
      */
     public void reiniciarArregloCadenas( Object[] objetos )
     {
-
+    	
+    	arregloCadenas = new String[objetos.length];
+    	
+    	for (int i = 0; i < objetos.length ; i++) {
+    		arregloCadenas[i] = objetos[i].toString();
+    	}
     }
 
     /**
@@ -478,15 +487,16 @@ public class SandboxArreglos
      */
     public void generarEnteros( int cantidad, int minimo, int maximo )
     {
-    	int[] res = new int[cantidad];
-    	for (int i = 2; i < res.length; i++) {
+    	if (maximo < minimo) {
+    		return;
+    	}
+    	arregloEnteros = new int[cantidad];
+    	for (int i = 0; i < arregloEnteros.length; i++) {
     		double a = Math.random();
 
-        	res[i] = (int)( a * (maximo - minimo ) + minimo);
+    		arregloEnteros[i] = (int)( (a * (maximo - minimo + 1))) + minimo;
     		
     	}
-    	arregloEnteros = res;
-
     }
 
 }

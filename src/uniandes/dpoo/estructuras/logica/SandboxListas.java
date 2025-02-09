@@ -196,6 +196,10 @@ public class SandboxListas
      */
     public void reiniciarArregloEnteros( double[] valores )
     {
+    	listaEnteros = new ArrayList<Integer>();
+    	for (int i = 0; i < valores.length ; i++) {
+    		listaEnteros.add((int)(valores[i]));
+    	}
     }
 
     /**
@@ -206,7 +210,10 @@ public class SandboxListas
      */
     public void reiniciarArregloCadenas( List<Object> objetos )
     {
-
+    	listaCadenas = new ArrayList<String>();
+        for (Object obj : objetos) {
+        	listaCadenas.add(obj.toString());
+        }
     }
 
     /**
@@ -348,9 +355,12 @@ public class SandboxListas
      */
     public void generarEnteros( int cantidad, int minimo, int maximo )
     {
+    	if (maximo < minimo) {
+    		return;
+    	}
     	listaEnteros = new ArrayList<>();
     	for (int i = 0; i < cantidad; i++) {
-    		listaEnteros.add((int) ((Math.random() * (maximo - minimo)) + minimo));
+    		listaEnteros.add((int) ((Math.random() * (maximo - minimo + 1))) + minimo);
     	}
 
     }

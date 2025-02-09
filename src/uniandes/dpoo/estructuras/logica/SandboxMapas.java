@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.TreeSet;
 
 /**
  * Esta clase tiene un conjunto de métodos para practicar operaciones sobre mapas.
@@ -159,6 +160,8 @@ public class SandboxMapas
      */
     public void reiniciarMapaCadenas( List<Object> objetos )
     {
+    	mapaCadenas = new HashMap<String, String>( );
+        objetos.forEach(obj -> mapaCadenas.put(obj.toString(), obj.toString()));
     }
 
     /**

@@ -163,7 +163,8 @@ public class SandboxConjuntos
      */
     public void reiniciarConjuntoCadenas( List<Object> objetos )
     {
-
+    	arbolCadenas = new TreeSet<String>( );
+        objetos.forEach(obj -> arbolCadenas.add(obj.toString()));
     }
 
     /**
